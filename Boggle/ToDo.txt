@@ -1,0 +1,14 @@
+TODO:
+
+- Implement Start Button for shuffling the dices + start timer
+- Implement Stop button and Restart button poping up when Start Button pressed
+- Implement Pause button freezing game state and hiding the dices (upper right corner)
+- Implement a customizable timer
+- Settings logo with a settings page containing time setting, whether 5x5 or 4x4, etc... (upper left corner)
+- Add a game ended ring
+- Add a ring for the last 5 seconds
+- Allow to shuffle the dices by shaking the device
+- Couple with a dictionnary database to submit best solutions
+- Implement a switch for a 5x5 version
+- Animate dices when shuffled
+- Add a presentation page when loading the app

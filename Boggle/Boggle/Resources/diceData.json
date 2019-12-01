@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "letters": ["I", "R", "A", "P", "L", "B"],
+        "activeLetter": "B",
+        "orientation": 90,
+        "location": 1
+    },
+    {
+        "id": 2,
+        "letters": ["Qu", "B", "M", "J", "O", "A"],
+        "activeLetter": "E",
+        "orientation": 180,
+        "location": 2
+    },
+    {
+        "id": 3,
+        "letters": ["N", "E", "R", "I", "H", "S"],
+        "activeLetter": "L",
+        "orientation": 180,
+        "location": 3
+    },
+    {
+        "id": 4,
+        "letters": ["D", "A", "M", "E", "C", "P"],
+        "activeLetter": "G",
+        "orientation": -90,
+        "location": 4
+    },
+    {
+        "id": 5,
+        "letters": ["I", "E", "A", "T", "O", "A"],
+        "activeLetter": "O",
+        "orientation": 90,
+        "location": 5
+    },
+    {
+        "id": 6,
+        "letters": ["W", "I", "L", "U", "E", "R"],
+        "activeLetter": "X",
+        "orientation": 0,
+        "location": 6
+    },
+    {
+        "id": 7,
+        "letters": ["F", "I", "H", "E", "E", "S"],
+        "activeLetter": "X",
+        "orientation": 0,
+        "location": 7
+    },
+    {
+        "id": 8,
+        "letters": ["R", "C", "L", "S", "E", "A"],
+        "activeLetter": "G",
+        "orientation": -90,
+        "location": 8
+    },
+    {
+        "id": 9,
+        "letters": ["I", "O", "S", "A", "R", "M"],
+        "activeLetter": "G",
+        "orientation": 90,
+        "location": 9
+    },
+    {
+        "id": 10,
+        "letters": ["K", "E", "T", "N", "O", "U"],
+        "activeLetter": "X",
+        "orientation": 0,
+        "location": 10
+    },
+    {
+        "id": 11,
+        "letters": ["T", "E", "S", "U", "P", "L"],
+        "activeLetter": "X",
+        "orientation": 0,
+        "location": 11
+    },
+    {
+        "id": 12,
+        "letters": ["A", "Z", "E", "V", "N", "D"],
+        "activeLetter": "O",
+        "orientation": -90,
+        "location": 12
+    },
+    {
+        "id": 13,
+        "letters": ["Y", "E", "G", "U", "N", "L"],
+        "activeLetter": "G",
+        "orientation": 90,
+        "location": 13
+    },
+    {
+        "id": 14,
+        "letters": ["X", "I", "A", "O", "F", "R"],
+        "activeLetter": "L",
+        "orientation": 0,
+        "location": 14
+    },
+    {
+        "id": 15,
+        "letters": ["T", "E", "V", "I", "N", "G"],
+        "activeLetter": "E",
+        "orientation": 0,
+        "location": 15
+    },
+    {
+        "id": 16,
+        "letters": ["E", "S", "O", "T", "D", "N"],
+        "activeLetter": "B",
+        "orientation": -90,
+        "location": 16
+    }
+]
