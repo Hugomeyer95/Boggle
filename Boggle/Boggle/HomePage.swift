@@ -17,7 +17,9 @@ struct HomePage: View {
         return ((maxGridSize < screenWidth) ? 500 : screenWidth)
     }
     //var timer:Timer?
-    
+    var gridSizeRatio: CGFloat{
+        return gridSize/maxGridSize
+    }
     
     @EnvironmentObject var userData: UserData
     //@EnvironmentObject var timerWrapper: TimerWrapper
@@ -30,30 +32,68 @@ struct HomePage: View {
             Color(red: 0, green: 0.3, blue: 0.6, opacity: 1.0)
                 .edgesIgnoringSafeArea(.top)
                 .edgesIgnoringSafeArea(.bottom)
-            VStack{
-                CountdownView(gridSizeRatio: gridSize/maxGridSize)
+            VStack(spacing: 5){
+                Spacer()
+                ZStack{
+                    HStack{
+                        
+                        SettingsButton(gridSizeRatio: gridSizeRatio).offset(x: 40*gridSizeRatio)
+                        Spacer()
+                        if self.userData.gamePlaying == true{
+                            StopButton(gridSizeRatio: gridSizeRatio)
+                                .offset(x: -40*gridSizeRatio)
+                        }
+                        
+                    }
+                    
+                    CountdownView(gridSizeRatio: gridSizeRatio)
+                }
+                
                 Spacer()
                 Spacer()
                 Spacer()
-                DiceGrid(maxGridSize: maxGridSize, gridSize: gridSize)
-                    .environmentObject(self.userData)
+                ZStack{
+                    DiceGrid(maxGridSize: maxGridSize, gridSize: gridSize)
+                        .environmentObject(self.userData)
+                    if self.userData.pause{
+                        BoggleCover(gridSize: gridSize)
+                        if self.userData.reset == false{
+                            Text("PAUSE")
+                                .fontWeight(.light)
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .font(.system(size: gridSize/6))
+                                .opacity(0.6)
+                        }
+                    }
+                }
+                
                 Spacer()
                 if self.userData.gamePlaying == false{
                     GoButton(gridSize: gridSize)
                 }
                 else{
                     HStack{
+                        Spacer()
                         RestartButton(gridSize: gridSize)
-                        PauseButton(gridSize: gridSize)
-                    }.frame(width: gridSize, height: gridSize/5)
+                        Spacer()
+                        if self.userData.pause{
+                            PlayButton(gridSize: gridSize)
+                        }
+                        else{
+                            PauseButton(gridSize: gridSize)
+                        }
+                        Spacer()
+                    }//.frame(width: gridSize, height: gridSize/5)
+                    
                 }
-                
                     
                 Spacer()
                 Spacer()
                 
 
             }
+            //.edgesIgnoringSafeArea(.top)
         }
             
     }

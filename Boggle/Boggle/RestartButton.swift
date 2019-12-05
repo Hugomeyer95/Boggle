@@ -16,15 +16,15 @@ struct RestartButton: View {
     
     var body: some View {
         Button(action: {
-            
+            self.userData.ResetTimer()
+            self.userData.reset.toggle()
         }) {
-            Text("Restart")
-                .fontWeight(.light)
+            Image(systemName: "arrow.clockwise")
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
+                .frame(width: gridSize/3, height: gridSize/5)
                 .font(.system(size: gridSize/10))
                 .background(Color.blue)
-                
         }
         .cornerRadius(15)
         

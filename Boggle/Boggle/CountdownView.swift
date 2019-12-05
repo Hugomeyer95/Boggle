@@ -14,16 +14,25 @@ struct CountdownView: View {
     //@EnvironmentObject var userData: UserData
     @EnvironmentObject var userData: UserData
     
+    var textColor: Color {userData.countdownTime<=5 ? Color.red : Color.white}
+    var image: String {userData.countdownTime<=5 ? "hourglass_red" : "hourglass"}
     
     var body: some View {
         ZStack{
-            Image("hourglass")
+            Image(systemName: "stopwatch")
+                .foregroundColor(textColor)
+                .font(.system(size: 30*self.gridSizeRatio))
+                .offset(x: -45*self.gridSizeRatio, y: -2)
+                /*
                 .resizable()
-                .offset(x: CGFloat(-50)*self.gridSizeRatio)
                 .frame(width: CGFloat(30)*self.gridSizeRatio, height: CGFloat(30)*self.gridSizeRatio)
+                .offset(x: -40*self.gridSizeRatio)*/
             Text(DisplayTime(time: self.userData.countdownTime))//
             .fontWeight(.semibold)
-            .foregroundColor(Color.white)
+            .foregroundColor(self.textColor)
+            .font(.system(size: 30*self.gridSizeRatio))
+            .offset(x: 17*self.gridSizeRatio)
+            
             //Spacer()
         }
 
@@ -32,7 +41,7 @@ struct CountdownView: View {
     func DisplayTime (time: Int) -> String{
         let min = Int(time/60)
         let newSec = time-60*min
-        let secString = newSec<=10 ? "0"+String(newSec) : String(newSec)
+        let secString = newSec<10 ? "0"+String(newSec) : String(newSec)
         let timeDisp = String(min)+":"+secString
         return timeDisp
     }

@@ -21,7 +21,7 @@ struct DiceGrid: View {
     }
     
     var body: some View {
-        
+            
             VStack{
                 
                 GridRow(gridSize: gridSize, maxGridSize: maxGridSize, dices: Array(dicesSortedByLocation[0..<4]))
@@ -41,11 +41,10 @@ struct DiceGrid: View {
                 .shadow(radius: 30)
                 .overlay(
                     RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color(red: 0.26, green: 0.14, blue: 0.14, opacity: 0.5), lineWidth: 14)
-                        .padding(EdgeInsets(top: 6, leading: 6, bottom: 6, trailing: 6))
-                    
-                    
+                        .stroke(Color(red: 0.5, green: 0.2, blue: 0.07, opacity: 1), lineWidth: 14)
+                    .padding(EdgeInsets(top: 6, leading: 6, bottom: 6, trailing: 6))
                 )
+             
 
     }
 }
@@ -53,7 +52,7 @@ struct DiceGrid: View {
 
 struct DiceGrid_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE", "iPhone XS Max", "iPad Pro (11-inch)"], id: \.self) { deviceName in
+        ForEach(["iPhone SE"], id: \.self) { deviceName in
             DiceGrid(maxGridSize: 500, gridSize: 300)
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)

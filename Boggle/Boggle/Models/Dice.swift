@@ -11,6 +11,8 @@ import CoreLocation
 struct Dice: Hashable, Codable, Identifiable {
     var id: Int
     var letters: [String]
+    var defaultLetter: String
+    var defaultOrientation: Double
     var activeLetter: String
     var orientation: Double
     var location: Int

@@ -2,112 +2,144 @@
     {
         "id": 1,
         "letters": ["I", "R", "A", "P", "L", "B"],
+        "defaultLetter": "B",
         "activeLetter": "B",
+        "defaultOrientation": 90,
         "orientation": 90,
         "location": 1
     },
     {
         "id": 2,
         "letters": ["Qu", "B", "M", "J", "O", "A"],
+        "defaultLetter": "E",
         "activeLetter": "E",
+        "defaultOrientation": 180,
         "orientation": 180,
         "location": 2
     },
     {
         "id": 3,
         "letters": ["N", "E", "R", "I", "H", "S"],
+        "defaultLetter": "L",
         "activeLetter": "L",
+        "defaultOrientation": 180,
         "orientation": 180,
         "location": 3
     },
     {
         "id": 4,
         "letters": ["D", "A", "M", "E", "C", "P"],
+        "defaultLetter": "G",
         "activeLetter": "G",
+        "defaultOrientation": -90,
         "orientation": -90,
         "location": 4
     },
     {
         "id": 5,
         "letters": ["I", "E", "A", "T", "O", "A"],
+        "defaultLetter": "O",
         "activeLetter": "O",
+        "defaultOrientation": 90,
         "orientation": 90,
         "location": 5
     },
     {
         "id": 6,
         "letters": ["W", "I", "L", "U", "E", "R"],
+        "defaultLetter": "X",
         "activeLetter": "X",
+        "defaultOrientation": 0,
         "orientation": 0,
         "location": 6
     },
     {
         "id": 7,
         "letters": ["F", "I", "H", "E", "E", "S"],
+        "defaultLetter": "X",
         "activeLetter": "X",
+        "defaultOrientation": 0,
         "orientation": 0,
         "location": 7
     },
     {
         "id": 8,
         "letters": ["R", "C", "L", "S", "E", "A"],
+        "defaultLetter": "G",
         "activeLetter": "G",
+        "defaultOrientation": -90,
         "orientation": -90,
         "location": 8
     },
     {
         "id": 9,
         "letters": ["I", "O", "S", "A", "R", "M"],
+        "defaultLetter": "G",
         "activeLetter": "G",
+        "defaultOrientation": 90,
         "orientation": 90,
         "location": 9
     },
     {
         "id": 10,
         "letters": ["K", "E", "T", "N", "O", "U"],
+        "defaultLetter": "X",
         "activeLetter": "X",
+        "defaultOrientation": 0,
         "orientation": 0,
         "location": 10
     },
     {
         "id": 11,
         "letters": ["T", "E", "S", "U", "P", "L"],
+        "defaultLetter": "X",
         "activeLetter": "X",
+        "defaultOrientation": 0,
         "orientation": 0,
         "location": 11
     },
     {
         "id": 12,
         "letters": ["A", "Z", "E", "V", "N", "D"],
+        "defaultLetter": "O",
         "activeLetter": "O",
+        "defaultOrientation": -90,
         "orientation": -90,
         "location": 12
     },
     {
         "id": 13,
         "letters": ["Y", "E", "G", "U", "N", "L"],
+        "defaultLetter": "G",
         "activeLetter": "G",
+        "defaultOrientation": 90,
         "orientation": 90,
         "location": 13
     },
     {
         "id": 14,
         "letters": ["X", "I", "A", "O", "F", "R"],
+        "defaultLetter": "L",
         "activeLetter": "L",
+        "defaultOrientation": 0,
         "orientation": 0,
         "location": 14
     },
     {
         "id": 15,
         "letters": ["T", "E", "V", "I", "N", "G"],
+        "defaultLetter": "E",
         "activeLetter": "E",
+        "defaultOrientation": 0,
         "orientation": 0,
         "location": 15
     },
     {
         "id": 16,
         "letters": ["E", "S", "O", "T", "D", "N"],
+        "defaultLetter": "B",
         "activeLetter": "B",
+        "defaultOrientation": -90,
         "orientation": -90,
         "location": 16
     }

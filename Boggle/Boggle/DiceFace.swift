@@ -16,32 +16,24 @@ struct DiceFace: View {
     var gridSizeRatio: CGFloat{
         return gridSize/maxGridSize
     }
-    let maxFont: CGFloat = 70
+    var maxFont: CGFloat {letter == "Qu" ? 55 : 70}
     var confusingLetter: Bool {["M", "W", "Z", "N"].contains(letter)}
+    var underline: String {confusingLetter ? "__" : ""}
     
     var body: some View {
         ZStack{
-            
-            
-                Image("dice")
-                    .resizable()
-    //                .frame(width: 100, height: 100)
-                
-            
-            
-            
-            VStack{
+            Image("dice")
+                .resizable()
+            ZStack{
                 
                 Text(letter)
                     .font(.system(size: maxFont*gridSizeRatio))
                     .fontWeight(.bold)
                     .foregroundColor(Color.black)
-                    .offset(y: (confusingLetter ? 17*gridSizeRatio : 0))
+
+                Text(underline)
+                    .offset(y: 20*gridSizeRatio)
                 
-                if confusingLetter{
-                    Text("__")
-                        .offset(y: -17*gridSizeRatio)
-                }
             }
                 .rotationEffect(.degrees(orientation))
                 

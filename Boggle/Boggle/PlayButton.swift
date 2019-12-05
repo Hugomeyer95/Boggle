@@ -1,5 +1,5 @@
 //
-//  PauseButton.swift
+//  PlayButton.swift
 //  Boggle
 //
 //  Created by Hugo Meyer on 12/5/19.
@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct PauseButton: View {
+struct PlayButton: View {
     
     @EnvironmentObject var userData: UserData
     var gridSize: CGFloat
@@ -18,20 +18,20 @@ struct PauseButton: View {
         Button(action: {
             self.userData.pause.toggle()
         }) {
-            Image(systemName: "pause")
+            Image(systemName: "play")
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
                 .frame(width: gridSize/3, height: gridSize/5)
                 .font(.system(size: gridSize/10))
-                .background(Color.orange)
+                .background(Color.green)
                 
         }
         .cornerRadius(15)
     }
 }
 
-struct PauseButton_Previews: PreviewProvider {
+struct PlayButton_Previews: PreviewProvider {
     static var previews: some View {
-        PauseButton(gridSize: CGFloat(0.7))
+        PlayButton(gridSize: CGFloat(0.7))
     }
 }
