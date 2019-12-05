@@ -11,6 +11,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,7 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: HomePage().environmentObject(UserData()))
+            
+            
+            let userData = UserData()
+            
+            //userData.countdown.initCountdown()
+            
+            //let timer = TimerWrapper()
+            //timer.start(withTimeInterval: 1)
+            
+            window.rootViewController = UIHostingController(rootView: HomePage().environmentObject(userData))
             self.window = window
             window.makeKeyAndVisible()
         }

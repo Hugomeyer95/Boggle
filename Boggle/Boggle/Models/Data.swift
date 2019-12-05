@@ -9,7 +9,9 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
+let probaData: [Proba] = load("probaData.json")
 let diceData: [Dice] = load("diceData.json")
+
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

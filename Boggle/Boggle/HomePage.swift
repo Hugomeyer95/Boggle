@@ -20,7 +20,7 @@ struct HomePage: View {
     
     
     @EnvironmentObject var userData: UserData
-    @State var gamePlaying = false
+    //@EnvironmentObject var timerWrapper: TimerWrapper
     @State var test = false
     @State var countdownTimer = 60
     //@State var countdown = Countdown()
@@ -31,30 +31,23 @@ struct HomePage: View {
                 .edgesIgnoringSafeArea(.top)
                 .edgesIgnoringSafeArea(.bottom)
             VStack{
+                CountdownView(gridSizeRatio: gridSize/maxGridSize)
                 Spacer()
-                //countdown.countdownView
                 Spacer()
                 Spacer()
                 DiceGrid(maxGridSize: maxGridSize, gridSize: gridSize)
                     .environmentObject(self.userData)
                 Spacer()
-                Button(action: {
-                    self.gamePlaying.toggle()
-                    var shuffleObj = DiceShuffle(dices: self.userData.dices)
-                    self.userData.dices = shuffleObj.dicesShuffled()
-                    //self.countdown.initCountdown()
-                }) {
-                    Text("GO !")
-                        .fontWeight(.light)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .frame(width: gridSize, height: gridSize/5)
-                        .font(.system(size: gridSize/10))
-                        
-                        .background(Color.green)
-                        
+                if self.userData.gamePlaying == false{
+                    GoButton(gridSize: gridSize)
                 }
-                .cornerRadius(15)
+                else{
+                    HStack{
+                        RestartButton(gridSize: gridSize)
+                        PauseButton(gridSize: gridSize)
+                    }.frame(width: gridSize, height: gridSize/5)
+                }
+                
                     
                 Spacer()
                 Spacer()
@@ -71,7 +64,7 @@ struct HomePage: View {
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE", "iPad Pro (11-inch)"], id: \.self) { deviceName in
+        ForEach(["iPhone SE"], id: \.self) { deviceName in
             HomePage()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
