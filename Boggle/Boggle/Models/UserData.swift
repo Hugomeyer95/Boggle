@@ -10,9 +10,11 @@ import SwiftUI
 import AVFoundation
 
 final class UserData: ObservableObject {
-    @Published var dices = diceData
+    //@Published var dices = diceData
     @Published var probas = probaData
-    @Published var diceUse = false
+    //@Published var diceUse = false
+    @Published var countdownMinutes = 0
+    @Published var countdownSeconds = 10
     @Published var countdownTime = 10
     @Published var gamePlaying = false
     @Published var pause = false
@@ -22,18 +24,18 @@ final class UserData: ObservableObject {
     
     var timer : Timer!
     func start(withTimeInterval interval: Double) {
+        self.countdownTime = self.countdownMinutes*60 + self.countdownSeconds
         self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
             self.willChange.send(self)
             if self.pause == false{
                 self.countdownTime -= 1
             }
-            print(self.countdownTime)
-            if self.countdownTime <= 5 && self.countdownTime > 0{
+            if self.countdownTime <= 5 && self.countdownTime > 0 && self.pause == false{
                 AudioServicesPlayAlertSound(SystemSoundID(1071))
             }
-            if self.countdownTime <= 0{
-                AudioServicesPlayAlertSound(SystemSoundID(1151))
+            if self.countdownTime <= 0 && self.pause == false{
+                AudioServicesPlayAlertSound(SystemSoundID(1265))
                 self.ResetTimer()
             }
         }
@@ -41,7 +43,7 @@ final class UserData: ObservableObject {
     
     func ResetTimer (){
         self.timer.invalidate()
-        self.countdownTime = 10
+        self.countdownTime = self.countdownMinutes*60 + self.countdownSeconds
         self.gamePlaying.toggle()
     }
 }

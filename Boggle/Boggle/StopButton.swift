@@ -13,13 +13,15 @@ struct StopButton: View {
     @EnvironmentObject var userData: UserData
     var gridSizeRatio: CGFloat
     
+    @Binding var grid: Grid
+    
     var body: some View {
         Button(action: {
             self.userData.ResetTimer()
-            for index in 0..<self.userData.dices.count {
-                self.userData.dices[index].activeLetter = self.userData.dices[index].defaultLetter
-                self.userData.dices[index].location = index+1
-                self.userData.dices[index].orientation = self.userData.dices[index].defaultOrientation
+            for index in 0..<self.grid.dices.count {
+                self.grid.dices[index].activeLetter = "X"//self.grid.dices[index].defaultLetter
+                self.grid.dices[index].location = index+1
+                self.grid.dices[index].orientation = 0.0//self.grid.dices[index].defaultOrientation
             }
         }) {
             Image(systemName: "stop.circle")
@@ -33,6 +35,6 @@ struct StopButton: View {
 
 struct StopButton_Previews: PreviewProvider {
     static var previews: some View {
-        StopButton(gridSizeRatio: CGFloat(0.7))
+        StopButton(gridSizeRatio: CGFloat(0.7), grid: .constant(.default))
     }
 }

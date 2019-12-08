@@ -10,19 +10,21 @@ import Foundation
 
 struct DiceShuffle {
     
-    //@EnvironmentObject var userData: UserData
     var dices: [Dice]
-    var probas: [Double]
     let orientations: [Double] = [0.0, 90.0, 180.0, -90.0]
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var difficulty: String
     
+    var proba: Proba {probaData.first(where: { $0.label ==  difficulty})!}
 
     mutating func dicesShuffled() -> [Dice] {
-        let locations = 0..<16
+        print(proba.pAlphabet)
+        let nbDices = self.dices.count
+        let locations = 0..<nbDices
         let shuffledLocations = locations.shuffled()
-        let cumSum = probas.reduce(into: []) { $0.append(($0.last ?? 0) + $1) }
-        for i in 0..<16{
-            let diceFaceIndex = Int.random(in: 0 ..< 6)
+        var cumSum = proba.pAlphabet.reduce(into: []) { $0.append(($0.last ?? 0) + $1) }
+        cumSum.append(100.0)
+        for i in 0..<nbDices{
             let diceOrientationIndex = Int.random(in: 0 ..< 4)
             let proba = Double.random(in: 0 ..< 100)
             //dices[i].activeLetter = dices[i].letters[diceFaceIndex]

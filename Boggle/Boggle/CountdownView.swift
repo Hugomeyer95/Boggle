@@ -16,6 +16,15 @@ struct CountdownView: View {
     
     var textColor: Color {userData.countdownTime<=5 ? Color.red : Color.white}
     var image: String {userData.countdownTime<=5 ? "hourglass_red" : "hourglass"}
+    var timeDisplay: String {
+        if self.userData.gamePlaying{
+            return DisplayTime1(time: self.userData.countdownTime)
+        }
+        else{
+            return DisplayTime2(minutes: self.userData.countdownMinutes, seconds: self.userData.countdownSeconds)
+        }
+        
+    }
     
     var body: some View {
         ZStack{
@@ -27,22 +36,28 @@ struct CountdownView: View {
                 .resizable()
                 .frame(width: CGFloat(30)*self.gridSizeRatio, height: CGFloat(30)*self.gridSizeRatio)
                 .offset(x: -40*self.gridSizeRatio)*/
-            Text(DisplayTime(time: self.userData.countdownTime))//
-            .fontWeight(.semibold)
-            .foregroundColor(self.textColor)
-            .font(.system(size: 30*self.gridSizeRatio))
-            .offset(x: 17*self.gridSizeRatio)
+                Text(timeDisplay)//
+                .fontWeight(.semibold)
+                .foregroundColor(self.textColor)
+                .font(.system(size: 30*self.gridSizeRatio))
+                .offset(x: 17*self.gridSizeRatio)
+           
             
             //Spacer()
         }
 
     }
     
-    func DisplayTime (time: Int) -> String{
+    func DisplayTime1 (time: Int) -> String{
         let min = Int(time/60)
         let newSec = time-60*min
         let secString = newSec<10 ? "0"+String(newSec) : String(newSec)
         let timeDisp = String(min)+":"+secString
+        return timeDisp
+    }
+    func DisplayTime2 (minutes: Int, seconds: Int) -> String{
+        let secString = seconds<10 ? "0"+String(seconds) : String(seconds)
+        let timeDisp = String(minutes)+":"+secString
         return timeDisp
     }
 }

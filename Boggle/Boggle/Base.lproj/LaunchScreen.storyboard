@@ -15,13 +15,128 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="COUCOU" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-d2-aJ0">
-                                <rect key="frame" x="79" y="423" width="241" height="51"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="Tbr-Ag-UMk">
+                                <rect key="frame" x="11" y="314" width="71" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="2H3-Rl-kDD"/>
+                                    <constraint firstAttribute="width" constant="70" id="BSk-xb-1X8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="oVn-J2-Ja4"/>
+                                    <constraint firstAttribute="height" constant="70" id="pPQ-A9-lgB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="PTG-Yd-yIJ">
+                                <rect key="frame" x="140" y="314" width="71" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="94I-td-wb1"/>
+                                    <constraint firstAttribute="width" constant="70" id="GcQ-1N-eGz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="WoQ-Qn-RsJ"/>
+                                    <constraint firstAttribute="height" constant="70" id="ogw-Fh-4Ce"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="Lij-of-cSN">
+                                <rect key="frame" x="205" y="314" width="71" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Vqw-Rf-9wr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="cFv-9V-i2g"/>
+                                    <constraint firstAttribute="height" constant="70" id="swO-0y-eoU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="zgh-ga-XfC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-g1-Q78">
+                                <rect key="frame" x="270" y="314" width="71" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="IdV-L0-UCx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Vdl-6W-s1G"/>
+                                    <constraint firstAttribute="height" constant="70" id="XFv-8H-auA"/>
+                                    <constraint firstAttribute="width" constant="70" id="jUb-au-w6d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="Hap-7L-xxl">
+                                <rect key="frame" x="335" y="314" width="71" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0Fx-sa-4y7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="RSV-a8-NRH"/>
+                                    <constraint firstAttribute="width" constant="70" id="j6s-l3-0Op"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="rhB-sp-Sia"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="13M-0B-O1h">
+                                <rect key="frame" x="75" y="314" width="71" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="QIF-n3-pRc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="hFr-vc-OvZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="sRj-Vf-0jN"/>
+                                    <constraint firstAttribute="height" constant="70" id="wnh-Sl-LAR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="KXt-0q-B1q">
+                                <rect key="frame" x="121" y="332" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="FZ7-9l-QEq"/>
+                                    <constraint firstAttribute="height" constant="70" id="Sfv-gc-twC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="bUb-lH-FW8"/>
+                                    <constraint firstAttribute="width" constant="70" id="jOZ-TL-m2a"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="B" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mWQ-ek-CiN">
+                                <rect key="frame" x="22" y="311" width="50" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="O" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6tl-tq-bxP">
+                                <rect key="frame" x="86" y="311" width="50" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="G" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lzR-ac-iDb">
+                                <rect key="frame" x="151" y="311" width="50" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="G" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QFd-41-omN">
+                                <rect key="frame" x="217" y="311" width="50" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="L" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Lm-yA-tXA">
+                                <rect key="frame" x="281" y="311" width="50" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="E" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cVY-ie-0vA">
+                                <rect key="frame" x="346" y="311" width="50" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dice" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-vM-rxk">
+                                <rect key="frame" x="52" y="334" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="JC2-pc-wcS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="K7b-9e-h1F"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="OGA-iU-D9o"/>
+                                    <constraint firstAttribute="width" constant="70" id="TaE-bt-vXF"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Yerme Family" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5AK-8S-SDh">
+                                <rect key="frame" x="27" y="439" width="360" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="60"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -32,4 +147,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dice" width="183" height="183"/>
+    </resources>
 </document>

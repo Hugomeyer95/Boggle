@@ -10,7 +10,9 @@
 		6501F8542384A71800BC204B /* diceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6501F8532384A71800BC204B /* diceData.json */; };
 		6501F8562384B1C700BC204B /* GridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501F8552384B1C600BC204B /* GridRow.swift */; };
 		6501F8582385755B00BC204B /* DiceShuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501F8572385755B00BC204B /* DiceShuffle.swift */; };
+		656A8458239BAC0D0031265D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8457239BAC0D0031265D /* Grid.swift */; };
 		657D981023809B1500427368 /* dice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 657D980F23809B1500427368 /* dice.jpg */; };
+		65971887239AC8CD00632D7F /* SettingsHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65971886239AC8CD00632D7F /* SettingsHost.swift */; };
 		65BC0E50239954AE00321E89 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC0E4F239954AD00321E89 /* PlayButton.swift */; };
 		65BC0E52239958DF00321E89 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC0E51239958DF00321E89 /* StopButton.swift */; };
 		65BC0E54239959FA00321E89 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC0E53239959FA00321E89 /* SettingsButton.swift */; };
@@ -41,7 +43,9 @@
 		6501F8532384A71800BC204B /* diceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diceData.json; sourceTree = "<group>"; };
 		6501F8552384B1C600BC204B /* GridRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridRow.swift; sourceTree = "<group>"; };
 		6501F8572385755B00BC204B /* DiceShuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceShuffle.swift; sourceTree = "<group>"; };
+		656A8457239BAC0D0031265D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		657D980F23809B1500427368 /* dice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dice.jpg; sourceTree = "<group>"; };
+		65971886239AC8CD00632D7F /* SettingsHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHost.swift; sourceTree = "<group>"; };
 		65BC0E4F239954AD00321E89 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		65BC0E51239958DF00321E89 /* StopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
 		65BC0E53239959FA00321E89 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
@@ -129,15 +133,16 @@
 				65E75AF52382154E00124F5B /* HomePage.swift */,
 				6501F8572385755B00BC204B /* DiceShuffle.swift */,
 				6501F8552384B1C600BC204B /* GridRow.swift */,
-				65E973712397C9B200B107EC /* CountdownView.swift */,
-				65E973772399241200B107EC /* GoButton.swift */,
-				B7394867229F194000C47603 /* SceneDelegate.swift */,
+				65E9737B2399255100B107EC /* PauseButton.swift */,
 				65BC0E4F239954AD00321E89 /* PlayButton.swift */,
+				65BC0E51239958DF00321E89 /* StopButton.swift */,
 				65E973792399254400B107EC /* RestartButton.swift */,
 				65BC0E53239959FA00321E89 /* SettingsButton.swift */,
+				65971886239AC8CD00632D7F /* SettingsHost.swift */,
+				65E973772399241200B107EC /* GoButton.swift */,
+				65E973712397C9B200B107EC /* CountdownView.swift */,
+				B7394867229F194000C47603 /* SceneDelegate.swift */,
 				65BC0E552399A72200321E89 /* BoggleCover.swift */,
-				65BC0E51239958DF00321E89 /* StopButton.swift */,
-				65E9737B2399255100B107EC /* PauseButton.swift */,
 				B73948A0229F2E1F00C47603 /* DiceGrid.swift */,
 				65E75AEF2380B6DD00124F5B /* DiceFace.swift */,
 				B739487D229F1C0100C47603 /* Supporting Views */,
@@ -170,6 +175,7 @@
 			children = (
 				B7394880229F28B900C47603 /* Data.swift */,
 				B739487F229F28B900C47603 /* Dice.swift */,
+				656A8457239BAC0D0031265D /* Grid.swift */,
 				B7D2AAC4229F4D7C0061E5F5 /* UserData.swift */,
 				65E9736D23954A6600B107EC /* Proba.swift */,
 			);
@@ -270,6 +276,7 @@
 				65E75AF62382154E00124F5B /* HomePage.swift in Sources */,
 				65E9737C2399255100B107EC /* PauseButton.swift in Sources */,
 				65BC0E52239958DF00321E89 /* StopButton.swift in Sources */,
+				656A8458239BAC0D0031265D /* Grid.swift in Sources */,
 				65E9737A2399254400B107EC /* RestartButton.swift in Sources */,
 				B7394866229F194000C47603 /* AppDelegate.swift in Sources */,
 				65E75AF02380B6DD00124F5B /* DiceFace.swift in Sources */,
@@ -281,6 +288,7 @@
 				65BC0E562399A72200321E89 /* BoggleCover.swift in Sources */,
 				B7D2AAC5229F4D7C0061E5F5 /* UserData.swift in Sources */,
 				65E973722397C9B200B107EC /* CountdownView.swift in Sources */,
+				65971887239AC8CD00632D7F /* SettingsHost.swift in Sources */,
 				65BC0E50239954AE00321E89 /* PlayButton.swift in Sources */,
 				B7394881229F28B900C47603 /* Dice.swift in Sources */,
 				6501F8562384B1C700BC204B /* GridRow.swift in Sources */,

@@ -13,5 +13,5 @@ import CoreLocation
 struct Proba: Hashable, Codable, Identifiable {
     var id: Int
     var label: String
-    var probabilities: [Double]
+    var pAlphabet: [Double]
 }
