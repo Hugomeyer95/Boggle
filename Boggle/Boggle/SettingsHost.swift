@@ -70,14 +70,14 @@ struct SettingsHost: View {
             VStack(alignment: .leading, spacing: 20){
                 Text("Compte à rebours").bold()
                 HStack(spacing: 0) {
-                    Picker(selection: self.$userData.countdownMinutes, label: Text("Minutes")) {
+                    Picker(selection: self.$userData.countdownMinutes, label: Text("")) {
                         ForEach(0..<self.minutes.count) {
                             Text(self.minutes[$0]).tag($0)
                         }
                     }
                     .frame(maxWidth: screenWidth/2.5)
                     .clipped()
-                    Picker(selection: self.$userData.countdownSeconds, label: Text("Secondes")) {
+                    Picker(selection: self.$userData.countdownSeconds, label: Text("")) {
                         ForEach(0..<self.seconds.count) {
                             Text(self.seconds[$0]).tag($0)
                         }

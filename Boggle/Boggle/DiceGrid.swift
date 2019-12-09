@@ -34,7 +34,7 @@ struct DiceGrid: View {
             
       
         }
-        .padding(CGFloat(-1.6*Double(self.grid.spacing)+20))
+        .padding(CGFloat(-1.6*Double(21-self.grid.spacing)+20))
             .frame(width: self.grid.size, height: self.grid.size)
             .background(Color(red: 0.9, green: 0.55, blue: 0.0, opacity: 1.0))
             .cornerRadius(30)
@@ -49,9 +49,8 @@ struct DiceGrid: View {
     }
     
     func generateOffsets() -> [Float]{
-        var offsets: [Float] = Array(stride(from: -1.5*Float(self.grid.spacing), through: 1.5*Float(self.grid.spacing), by: Float(self.grid.spacing)))
-        print(offsets)
-        print(Float(self.grid.spacing))
+        var offsets: [Float] = Array(stride(from: -1.5*Float(21-self.grid.spacing), through: 1.5*Float(21-self.grid.spacing), by: Float(21-self.grid.spacing)))
+
         offsets.reverse()
         return offsets
     }

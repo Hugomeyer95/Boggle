@@ -13,8 +13,8 @@ final class UserData: ObservableObject {
     //@Published var dices = diceData
     @Published var probas = probaData
     //@Published var diceUse = false
-    @Published var countdownMinutes = 0
-    @Published var countdownSeconds = 10
+    @Published var countdownMinutes = 2
+    @Published var countdownSeconds = 30
     @Published var countdownTime = 10
     @Published var gamePlaying = false
     @Published var pause = false
@@ -35,7 +35,7 @@ final class UserData: ObservableObject {
                 AudioServicesPlayAlertSound(SystemSoundID(1071))
             }
             if self.countdownTime <= 0 && self.pause == false{
-                AudioServicesPlayAlertSound(SystemSoundID(1265))
+                AudioServicesPlayAlertSound(SystemSoundID(1030))
                 self.ResetTimer()
             }
         }

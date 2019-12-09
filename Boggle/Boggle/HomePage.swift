@@ -86,14 +86,15 @@ struct HomePage: View {
                 
                 //ZStack{Image(systemName: "selection.pin.in.out")}
                 //
-                Spacer()
+                
                 if showingRescale{
-                    VStack{
+                    VStack(spacing: -10){
                         VStack{
                             Text("Taille de grille")
                                 .fontWeight(.light)
                                 .foregroundColor(Color.white)
                                 .font(.system(size: self.grid.ratio*30))
+                                .offset(y: 10)
                             Slider(value: self.$grid.size, in: self.grid.minSize...self.grid.maxPossibleSize, step: 1)
                                 .frame(width: 450*self.grid.ratio)
                         }
@@ -102,11 +103,15 @@ struct HomePage: View {
                                 .fontWeight(.light)
                                 .foregroundColor(Color.white)
                                 .font(.system(size: self.grid.ratio*30))
+                                .offset(y: 10)
                             Slider(value: self.$grid.spacing, in: 1...20, step: 1)
                                 .frame(width: 450*self.grid.ratio)
                         }
                     
                     }
+                }else{
+                    Spacer()
+                    
                 }
                 Spacer()
                 ZStack{
@@ -121,7 +126,7 @@ struct HomePage: View {
                 
                 Spacer()
                 if self.userData.gamePlaying == false{
-                    GoButton(gridSize: self.grid.maxPossibleSize, rescale: self.showingRescale, grid: self.$grid)
+                    GoButton(gridSize: self.grid.size, rescale: self.showingRescale, grid: self.$grid)
                 }
                 else{
                     HStack{

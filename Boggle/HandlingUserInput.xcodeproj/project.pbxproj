@@ -18,6 +18,8 @@
 		65BC0E54239959FA00321E89 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC0E53239959FA00321E89 /* SettingsButton.swift */; };
 		65BC0E562399A72200321E89 /* BoggleCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC0E552399A72200321E89 /* BoggleCover.swift */; };
 		65BC0E582399C6C400321E89 /* hourglass_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 65BC0E572399C6C400321E89 /* hourglass_red.png */; };
+		65DC5874239DB84A00BF466C /* secondes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DC5873239DB84A00BF466C /* secondes.mp3 */; };
+		65DC5877239DB9A600BF466C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DC5876239DB9A600BF466C /* AVFoundation.framework */; };
 		65E75AF02380B6DD00124F5B /* DiceFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E75AEF2380B6DD00124F5B /* DiceFace.swift */; };
 		65E75AF4238209E300124F5B /* ToDo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65E75AF3238209E300124F5B /* ToDo.txt */; };
 		65E75AF62382154E00124F5B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E75AF52382154E00124F5B /* HomePage.swift */; };
@@ -51,6 +53,8 @@
 		65BC0E53239959FA00321E89 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		65BC0E552399A72200321E89 /* BoggleCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleCover.swift; sourceTree = "<group>"; };
 		65BC0E572399C6C400321E89 /* hourglass_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourglass_red.png; sourceTree = "<group>"; };
+		65DC5873239DB84A00BF466C /* secondes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secondes.mp3; sourceTree = "<group>"; };
+		65DC5876239DB9A600BF466C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		65E75AEF2380B6DD00124F5B /* DiceFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceFace.swift; sourceTree = "<group>"; };
 		65E75AF3238209E300124F5B /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		65E75AF52382154E00124F5B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -82,12 +86,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DC5877239DB9A600BF466C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65DC5875239DB9A500BF466C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65DC5876239DB9A600BF466C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		76C8812076C872F000000001 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +127,7 @@
 				B7394863229F194000C47603 /* Products */,
 				78D0340078D02CA000000001 /* Configuration */,
 				76C8812076C872F000000001 /* LICENSE */,
+				65DC5875239DB9A500BF466C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +155,7 @@
 				65971886239AC8CD00632D7F /* SettingsHost.swift */,
 				65E973772399241200B107EC /* GoButton.swift */,
 				65E973712397C9B200B107EC /* CountdownView.swift */,
+				65DC5873239DB84A00BF466C /* secondes.mp3 */,
 				B7394867229F194000C47603 /* SceneDelegate.swift */,
 				65BC0E552399A72200321E89 /* BoggleCover.swift */,
 				B73948A0229F2E1F00C47603 /* DiceGrid.swift */,
@@ -258,6 +273,7 @@
 				B739486F229F194200C47603 /* Preview Assets.xcassets in Resources */,
 				65E75AF4238209E300124F5B /* ToDo.txt in Resources */,
 				B739486C229F194200C47603 /* Assets.xcassets in Resources */,
+				65DC5874239DB84A00BF466C /* secondes.mp3 in Resources */,
 				65BC0E582399C6C400321E89 /* hourglass_red.png in Resources */,
 				657D981023809B1500427368 /* dice.jpg in Resources */,
 				65E9737623991A7900B107EC /* hourglass.png in Resources */,
