@@ -10,15 +10,14 @@ import SwiftUI
 import AVFoundation
 
 final class UserData: ObservableObject {
-    //@Published var dices = diceData
     @Published var probas = probaData
-    //@Published var diceUse = false
-    @Published var countdownMinutes = 2
-    @Published var countdownSeconds = 30
+    @Published var countdownMinutes = 0
+    @Published var countdownSeconds = 2
     @Published var countdownTime = 10
     @Published var gamePlaying = false
     @Published var pause = false
     @Published var reset = false
+    @Published var gameEnd = false
     
     let willChange = PassthroughSubject<UserData, Never>()
     
@@ -37,6 +36,7 @@ final class UserData: ObservableObject {
             if self.countdownTime <= 0 && self.pause == false{
                 AudioServicesPlayAlertSound(SystemSoundID(1030))
                 self.ResetTimer()
+                self.gameEnd = true
             }
         }
     }

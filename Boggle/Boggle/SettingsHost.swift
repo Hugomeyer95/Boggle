@@ -12,6 +12,7 @@ struct SettingsHost: View {
     
     @EnvironmentObject var userData: UserData
     @Binding var grid: Grid
+    @Binding var showingSettings: Bool
     
     let minutes: [String] = {
         var strings: [String] = []
@@ -35,9 +36,23 @@ struct SettingsHost: View {
     
     var body: some View {
         List {
-            Text("Préférences")
-            .bold()
-            .font(.title)
+            HStack{
+                Text("Préférences")
+                    .bold()
+                    .font(.title)
+                Spacer()
+                Button(action: {
+                    self.showingSettings = false
+                }){
+                    Text("Done")
+                        //.font(.body)
+                        .font(.system(size: 16))
+                        .fontWeight(.light)
+                        .foregroundColor(Color.blue)
+                        
+                }
+                
+            }
          
             /*
             Toggle(isOn: $profile.prefersNotifications) {
@@ -92,8 +107,3 @@ struct SettingsHost: View {
     }
 }
 
-struct SettingsHost_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsHost(grid: .constant(.default))
-    }
-}

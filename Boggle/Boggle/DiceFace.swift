@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct DiceFace: View {
+    var grid: Grid
     var letter: String
     var orientation: Double
-    var gridSize: CGFloat
-    var maxGridSize: CGFloat
     var gridSizeRatio: CGFloat{
-        return gridSize/maxGridSize
+        return grid.showSolutions ? grid.sizeWithSolutions/grid.maxSize : grid.size/grid.maxSize
     }
     var maxFont: CGFloat {letter == "Qu" ? 55 : 70}
     var confusingLetter: Bool {["M", "W", "Z", "N"].contains(letter)}
@@ -41,9 +40,10 @@ struct DiceFace: View {
         }
     }
 }
-
+/*
 struct DiceFace_Previews: PreviewProvider {
     static var previews: some View {
-        DiceFace(letter: "A", orientation: 0.0, gridSize: 400, maxGridSize: 500)
+        DiceFace(grid: Grid, letter: "A", orientation: 0.0)
     }
 }
+*/

@@ -19,21 +19,26 @@ struct Grid {
     var size: CGFloat
     var ratio: CGFloat
     var spacing: CGFloat
+    var sizeWithSolutions: CGFloat
+    var showSolutions: Bool
     
     
-    static let `default` = Self(dim: 4, difficulty: .medium, scale: 1, maxSize: 500, minSize: 350, spacing: 1)
+    static let `default` = Self(dim: 4, difficulty: .medium, scale: 1, maxSize: 500, minSize: 350, spacing: 1, showSolutions: false)
     
-    init(dim: Int = 4, difficulty: Difficulty = .medium, scale: Double = 1, maxSize: CGFloat = 500, minSize: CGFloat = 350, spacing: CGFloat = 1) {
+    init(dim: Int = 4, difficulty: Difficulty = .medium, scale: Double = 1, maxSize: CGFloat = 500, minSize: CGFloat = 350, spacing: CGFloat = 1, showSolutions: Bool = false) {
+        let screenSize = CGFloat(UIScreen.main.bounds.width)
         self.difficulty = difficulty
         self.dim = dim
         self.dices = []
         self.scale = scale
         self.maxSize = maxSize
-        self.maxPossibleSize = min(maxSize, CGFloat(UIScreen.main.bounds.width))
+        self.maxPossibleSize = min(maxSize, screenSize)
         self.minSize = minSize
         self.size = min(self.maxPossibleSize, 400)
         self.ratio = self.size/self.maxSize
         self.spacing = spacing
+        self.sizeWithSolutions = self.size > 0.75*screenSize ? 0.75*screenSize : self.size
+        self.showSolutions = showSolutions
         self.initDices()
         
         

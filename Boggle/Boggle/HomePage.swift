@@ -15,6 +15,8 @@ struct HomePage: View {
     @EnvironmentObject var userData: UserData
     @State var showingSettings = false
     @State var showingRescale = false
+    @State var isNavigationBarHidden: Bool = true
+    
     var pauseString: some View {
         Text("PAUSE")
         .fontWeight(.light)
@@ -50,106 +52,101 @@ struct HomePage: View {
     }
     
     var body: some View {
-        ZStack{
-            Color(red: 0, green: 0.3, blue: 0.6, opacity: 1.0)
-                .edgesIgnoringSafeArea(.top)
-                .edgesIgnoringSafeArea(.bottom)
-            VStack(spacing: 5){
-                ZStack{
-                    HStack{
-                        //SettingsButton(gridSizeRatio: gridSizeRatio).offset(x: 40*gridSizeRatio)
-                        settingsButton
-                            .offset(x: 40*self.grid.ratio)
-                            .sheet(isPresented: $showingSettings) {
-                                SettingsHost(grid: self.$tempGrid)
-                                    .environmentObject(self.userData)
-                                    .onAppear {
-                                        self.tempGrid = self.grid
-                                    }
-                                    .onDisappear {
-                                        self.tempGrid.checkIfNbDicesChanged()
-                                        self.grid = self.tempGrid
-                                    }
-                                 
+        NavigationView{
+            ZStack{
+                Color(red: 0, green: 0.3, blue: 0.6, opacity: 1.0)
+                    .edgesIgnoringSafeArea(.top)
+                    .edgesIgnoringSafeArea(.bottom)
+                VStack(spacing: 5){
+                    ZStack{
+                        HStack{
+                            //SettingsButton(gridSizeRatio: gridSizeRatio).offset(x: 40*gridSizeRatio)
+                            settingsButton
+                                .offset(x: 40*self.grid.ratio)
+                                .sheet(isPresented: $showingSettings) {
+                                    SettingsHost(grid: self.$tempGrid, showingSettings: self.$showingSettings)
+                                        .environmentObject(self.userData)
+                                        .onAppear {
+                                            self.tempGrid = self.grid
+                                        }
+                                        .onDisappear {
+                                            self.tempGrid.checkIfNbDicesChanged()
+                                            self.grid = self.tempGrid
+                                        }
+                                     
+                                }
+                            Spacer()
+                            if self.userData.gamePlaying == true{
+                                StopButton(gridSizeRatio: self.grid.ratio, grid: self.$grid)
+                                    .offset(x: -40*self.grid.ratio)
                             }
+                            else{
+                                rescaleButton.offset(x: -40*self.grid.ratio)
+                            }
+                        }
+                        CountdownView(gridSizeRatio: self.grid.ratio)
+                    }
+                    if showingRescale{
+                        RescaleSliders(grid: self.$grid)
+                    }else{
                         Spacer()
-                        if self.userData.gamePlaying == true{
-                            StopButton(gridSizeRatio: self.grid.ratio, grid: self.$grid)
-                                .offset(x: -40*self.grid.ratio)
-                        }
-                        else{
-                            rescaleButton.offset(x: -40*self.grid.ratio)
-                        }
+                        
                     }
-                    CountdownView(gridSizeRatio: self.grid.ratio)
-                }
-                
-                //ZStack{Image(systemName: "selection.pin.in.out")}
-                //
-                
-                if showingRescale{
-                    VStack(spacing: -10){
-                        VStack{
-                            Text("Taille de grille")
-                                .fontWeight(.light)
-                                .foregroundColor(Color.white)
-                                .font(.system(size: self.grid.ratio*30))
-                                .offset(y: 10)
-                            Slider(value: self.$grid.size, in: self.grid.minSize...self.grid.maxPossibleSize, step: 1)
-                                .frame(width: 450*self.grid.ratio)
-                        }
-                        VStack{
-                            Text("Espacement des dés")
-                                .fontWeight(.light)
-                                .foregroundColor(Color.white)
-                                .font(.system(size: self.grid.ratio*30))
-                                .offset(y: 10)
-                            Slider(value: self.$grid.spacing, in: 1...20, step: 1)
-                                .frame(width: 450*self.grid.ratio)
-                        }
-                    
-                    }
-                }else{
                     Spacer()
-                    
-                }
-                Spacer()
-                ZStack{
-                    DiceGrid(maxGridSize: self.grid.maxSize, gridSize: self.grid.size, grid: self.$grid)
-                    if self.userData.pause{
-                        BoggleCover(gridSize: self.grid.maxPossibleSize)
-                        if self.userData.reset == false{
-                            pauseString
+                    ZStack{
+                        HStack{
+                            DiceGrid(grid: self.$grid)
+                            /*
+                            if self.grid.showSolutions{
+                                
+                            }*/
                         }
-                    }
-                }
-                
-                Spacer()
-                if self.userData.gamePlaying == false{
-                    GoButton(gridSize: self.grid.size, rescale: self.showingRescale, grid: self.$grid)
-                }
-                else{
-                    HStack{
-                        Spacer()
-                        RestartButton(gridSize: self.grid.maxPossibleSize)
-                        Spacer()
                         if self.userData.pause{
-                            PlayButton(gridSize: self.grid.maxPossibleSize)
+                            BoggleCover(gridSize: self.grid.maxPossibleSize)
+                            if self.userData.reset == false{
+                                pauseString
+                            }
                         }
-                        else{
-                            PauseButton(gridSize: self.grid.maxPossibleSize)
-                        }
-                        Spacer()
-                    }//.frame(width: gridSize, height: gridSize/5)
+                        //if self.userData.gameEnd == true && self.grid.showSolutions == false{
+     
+                        NavigationLink(destination: SolutionsView(isNavigationBarHidden: self.$isNavigationBarHidden, grid: self.$grid), isActive: self.$grid.showSolutions){ EmptyView() }
+                        
+                        SolutionsButton(grid: self.$grid)
+                       // }
+                    }
+                    
+                    Spacer()
+                    if self.userData.gamePlaying == false{
+                        GoButton(gridSize: self.grid.size, rescale: self.showingRescale, grid: self.$grid)
+                    }
+                    else{
+                        HStack{
+                            Spacer()
+                            RestartButton(gridSize: self.grid.maxPossibleSize)
+                            Spacer()
+                            if self.userData.pause{
+                                PlayButton(gridSize: self.grid.maxPossibleSize)
+                            }
+                            else{
+                                PauseButton(gridSize: self.grid.maxPossibleSize)
+                            }
+                            Spacer()
+                        }//.frame(width: gridSize, height: gridSize/5)
+                    }
+                    Spacer()
+                    Spacer()
                 }
-                Spacer()
-                Spacer()
+                //.edgesIgnoringSafeArea(.top)
             }
-            //.edgesIgnoringSafeArea(.top)
+            .navigationBarTitle("")
+            .navigationBarHidden(self.isNavigationBarHidden)
+            .onAppear {
+                self.isNavigationBarHidden = true
+            }
         }
-                                            
     }
 }
+
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {

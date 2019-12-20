@@ -1,13 +1,14 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view showing a list of landmarks.
-*/
+//
+//  DiceGridSolutions.swift
+//  Boggle
+//
+//  Created by Hugo Meyer on 12/12/19.
+//  Copyright © 2019 Apple. All rights reserved.
+//
 
 import SwiftUI
 
-struct DiceGrid: View {
+struct DiceGridSolutions: View {
     
     var screenWidth = CGFloat(UIScreen.main.bounds.width)
     @Binding var grid: Grid
@@ -20,7 +21,6 @@ struct DiceGrid: View {
         }
     }
     
-    var gridSize: CGFloat {self.grid.showSolutions ? self.grid.sizeWithSolutions : self.grid.size}
     
     var offsets: [Float] {self.generateOffsets()}
     
@@ -35,7 +35,7 @@ struct DiceGrid: View {
       
         }
         .padding(CGFloat(-1.6*Double(21-self.grid.spacing)+20))
-            .frame(width: self.gridSize, height: self.gridSize)
+            .frame(width: self.grid.sizeWithSolutions, height: self.grid.sizeWithSolutions)
             .background(Color(red: 0.6, green: 0.64, blue: 0.7, opacity: 1.0))
             .cornerRadius(30)
             .shadow(radius: 30)
@@ -61,10 +61,10 @@ struct DiceGrid: View {
 }
 
 
-struct DiceGrid_Previews: PreviewProvider {
+struct DiceGridSolutions_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE"], id: \.self) { deviceName in
-            DiceGrid(grid: .constant(.default))
+            DiceGridSolutions(grid: .constant(.default))
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
         }

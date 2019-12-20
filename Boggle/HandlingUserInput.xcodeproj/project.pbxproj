@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6501F8542384A71800BC204B /* diceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6501F8532384A71800BC204B /* diceData.json */; };
-		6501F8562384B1C700BC204B /* GridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501F8552384B1C600BC204B /* GridRow.swift */; };
+		6501F8562384B1C700BC204B /* DiceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501F8552384B1C600BC204B /* DiceRow.swift */; };
 		6501F8582385755B00BC204B /* DiceShuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6501F8572385755B00BC204B /* DiceShuffle.swift */; };
+		651EDCD823A2A628004C3750 /* Solutions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EDCD723A2A628004C3750 /* Solutions.swift */; };
+		65598AEF239FF0CA00E39B42 /* RescaleSliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65598AEE239FF0CA00E39B42 /* RescaleSliders.swift */; };
+		65598AF123A253B900E39B42 /* SolutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65598AF023A253B900E39B42 /* SolutionsView.swift */; };
+		65598AF323A2548900E39B42 /* SolutionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65598AF223A2548900E39B42 /* SolutionsButton.swift */; };
+		65598AF523A2885000E39B42 /* DiceGridSolutions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65598AF423A2885000E39B42 /* DiceGridSolutions.swift */; };
 		656A8458239BAC0D0031265D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8457239BAC0D0031265D /* Grid.swift */; };
 		657D981023809B1500427368 /* dice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 657D980F23809B1500427368 /* dice.jpg */; };
 		65971887239AC8CD00632D7F /* SettingsHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65971886239AC8CD00632D7F /* SettingsHost.swift */; };
@@ -43,8 +48,13 @@
 
 /* Begin PBXFileReference section */
 		6501F8532384A71800BC204B /* diceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diceData.json; sourceTree = "<group>"; };
-		6501F8552384B1C600BC204B /* GridRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridRow.swift; sourceTree = "<group>"; };
+		6501F8552384B1C600BC204B /* DiceRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceRow.swift; sourceTree = "<group>"; };
 		6501F8572385755B00BC204B /* DiceShuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceShuffle.swift; sourceTree = "<group>"; };
+		651EDCD723A2A628004C3750 /* Solutions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solutions.swift; sourceTree = "<group>"; };
+		65598AEE239FF0CA00E39B42 /* RescaleSliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescaleSliders.swift; sourceTree = "<group>"; };
+		65598AF023A253B900E39B42 /* SolutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionsView.swift; sourceTree = "<group>"; };
+		65598AF223A2548900E39B42 /* SolutionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionsButton.swift; sourceTree = "<group>"; };
+		65598AF423A2885000E39B42 /* DiceGridSolutions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGridSolutions.swift; sourceTree = "<group>"; };
 		656A8457239BAC0D0031265D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		657D980F23809B1500427368 /* dice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dice.jpg; sourceTree = "<group>"; };
 		65971886239AC8CD00632D7F /* SettingsHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHost.swift; sourceTree = "<group>"; };
@@ -144,22 +154,26 @@
 			children = (
 				B739487E229F282200C47603 /* Models */,
 				B7394865229F194000C47603 /* AppDelegate.swift */,
+				B7394867229F194000C47603 /* SceneDelegate.swift */,
 				65E75AF52382154E00124F5B /* HomePage.swift */,
+				65598AF023A253B900E39B42 /* SolutionsView.swift */,
+				65971886239AC8CD00632D7F /* SettingsHost.swift */,
+				65BC0E552399A72200321E89 /* BoggleCover.swift */,
+				65E973712397C9B200B107EC /* CountdownView.swift */,
+				65598AEE239FF0CA00E39B42 /* RescaleSliders.swift */,
+				B73948A0229F2E1F00C47603 /* DiceGrid.swift */,
+				6501F8552384B1C600BC204B /* DiceRow.swift */,
+				65598AF423A2885000E39B42 /* DiceGridSolutions.swift */,
+				65E75AEF2380B6DD00124F5B /* DiceFace.swift */,
 				6501F8572385755B00BC204B /* DiceShuffle.swift */,
-				6501F8552384B1C600BC204B /* GridRow.swift */,
+				65BC0E53239959FA00321E89 /* SettingsButton.swift */,
+				65598AF223A2548900E39B42 /* SolutionsButton.swift */,
 				65E9737B2399255100B107EC /* PauseButton.swift */,
+				65E973792399254400B107EC /* RestartButton.swift */,
+				65E973772399241200B107EC /* GoButton.swift */,
 				65BC0E4F239954AD00321E89 /* PlayButton.swift */,
 				65BC0E51239958DF00321E89 /* StopButton.swift */,
-				65E973792399254400B107EC /* RestartButton.swift */,
-				65BC0E53239959FA00321E89 /* SettingsButton.swift */,
-				65971886239AC8CD00632D7F /* SettingsHost.swift */,
-				65E973772399241200B107EC /* GoButton.swift */,
-				65E973712397C9B200B107EC /* CountdownView.swift */,
 				65DC5873239DB84A00BF466C /* secondes.mp3 */,
-				B7394867229F194000C47603 /* SceneDelegate.swift */,
-				65BC0E552399A72200321E89 /* BoggleCover.swift */,
-				B73948A0229F2E1F00C47603 /* DiceGrid.swift */,
-				65E75AEF2380B6DD00124F5B /* DiceFace.swift */,
 				B739487D229F1C0100C47603 /* Supporting Views */,
 				B7394883229F291A00C47603 /* Resources */,
 				B739486B229F194200C47603 /* Assets.xcassets */,
@@ -193,6 +207,7 @@
 				656A8457239BAC0D0031265D /* Grid.swift */,
 				B7D2AAC4229F4D7C0061E5F5 /* UserData.swift */,
 				65E9736D23954A6600B107EC /* Proba.swift */,
+				651EDCD723A2A628004C3750 /* Solutions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,9 +310,12 @@
 				656A8458239BAC0D0031265D /* Grid.swift in Sources */,
 				65E9737A2399254400B107EC /* RestartButton.swift in Sources */,
 				B7394866229F194000C47603 /* AppDelegate.swift in Sources */,
+				65598AEF239FF0CA00E39B42 /* RescaleSliders.swift in Sources */,
 				65E75AF02380B6DD00124F5B /* DiceFace.swift in Sources */,
 				6501F8582385755B00BC204B /* DiceShuffle.swift in Sources */,
+				65598AF523A2885000E39B42 /* DiceGridSolutions.swift in Sources */,
 				B73948A1229F2E1F00C47603 /* DiceGrid.swift in Sources */,
+				65598AF323A2548900E39B42 /* SolutionsButton.swift in Sources */,
 				65BC0E54239959FA00321E89 /* SettingsButton.swift in Sources */,
 				B7394868229F194000C47603 /* SceneDelegate.swift in Sources */,
 				65E973782399241200B107EC /* GoButton.swift in Sources */,
@@ -305,9 +323,11 @@
 				B7D2AAC5229F4D7C0061E5F5 /* UserData.swift in Sources */,
 				65E973722397C9B200B107EC /* CountdownView.swift in Sources */,
 				65971887239AC8CD00632D7F /* SettingsHost.swift in Sources */,
+				65598AF123A253B900E39B42 /* SolutionsView.swift in Sources */,
+				651EDCD823A2A628004C3750 /* Solutions.swift in Sources */,
 				65BC0E50239954AE00321E89 /* PlayButton.swift in Sources */,
 				B7394881229F28B900C47603 /* Dice.swift in Sources */,
-				6501F8562384B1C700BC204B /* GridRow.swift in Sources */,
+				6501F8562384B1C700BC204B /* DiceRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

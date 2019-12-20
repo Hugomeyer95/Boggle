@@ -14,9 +14,9 @@ struct GoButton: View {
     @EnvironmentObject var userData: UserData
     var gridSize: CGFloat
     var rescale: Bool
-    var color: Color {self.rescale ? Color.gray : Color.green}
+    var color: Color {self.rescale ? Color.gray : Color(red: 0, green: 0.6, blue: 0.3, opacity: 1)}
     @State var blueSquare = UIView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
-    let IDS = [1558, 1509, 1335, 1020, 1027, 1030, 1265]
+    //let IDS = [1558, 1509, 1335, 1020, 1027, 1030, 1265]
     //let IDS = [1265, 1151, 1558]
     @State var counter = 1000
     @Binding var grid: Grid
@@ -25,7 +25,7 @@ struct GoButton: View {
     
     var body: some View {
         Button(action: {
-               
+             
             self.userData.gamePlaying.toggle()
             if self.userData.reset == false{
                 var shuffleObj = DiceShuffle(dices: self.grid.dices, difficulty: self.grid.difficulty.rawValue)
@@ -35,14 +35,19 @@ struct GoButton: View {
             }
             self.userData.start(withTimeInterval: 1)
             self.userData.pause = false
-            
+            self.userData.gameEnd = false
             //AudioServicesPlayAlertSound(SystemSoundID(self.IDS[self.counter%7]))
-            AudioServicesPlayAlertSound(SystemSoundID(1030))
+            //AudioServicesPlayAlertSound(SystemSoundID(1030))
             
             //self.counter += 1
             
             //print(self.counter)
-   
+            
+            self.grid.showSolutions = false
+   /*
+            
+            var sol = Solutions()
+            sol.Scrapping()*/
                 
             }) {
                 Text("GO !")
