@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Foundation
+import WebKit
 
 struct ServerMessage: Decodable {
    let res, message: String
@@ -15,11 +16,35 @@ struct ServerMessage: Decodable {
 
 struct Solutions {
 
-    var baseUrl = "https://france.pieroxy.net/blog/pages/ruzzle/fr.html"
+    
     
     
     
     func Scrapping(){
+        let MyWebView: WKWebView!
+        let baseUrl = URL (string: "https://france.pieroxy.net/blog/pages/ruzzle/fr.html")
+        let letters = "eertpoessacdtrea"
+        MyWebView.load(URLRequest(url: baseUrl!))
+        let fillForm = String("document.getElementById('input').value = '\(letters)';")
+        MyWebView.evaluateJavaScript(fillForm)
+
+        
+        
+        MyWebView.evaluateJavaScript("document.body.innerHTML", completionHandler: { (value: Any!, error: Error!) -> Void in
+
+            if error != nil {
+                //Error logic
+                return
+            }
+
+            let result = value as? String
+            
+            print(result)
+            //Main logic
+        })
+        
+        
+        /*
         let requestUrl = URL(string: self.baseUrl)!
         
 
@@ -45,7 +70,7 @@ struct Solutions {
             print(htmlString)
             
         }.resume()
-        
+        */
         
         /*
         let task = URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in

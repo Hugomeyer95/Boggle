@@ -25,7 +25,7 @@ struct GoButton: View {
     
     var body: some View {
         Button(action: {
-             
+            /*
             self.userData.gamePlaying.toggle()
             if self.userData.reset == false{
                 var shuffleObj = DiceShuffle(dices: self.grid.dices, difficulty: self.grid.difficulty.rawValue)
@@ -44,10 +44,11 @@ struct GoButton: View {
             //print(self.counter)
             
             self.grid.showSolutions = false
-   /*
+            */
+   
             
-            var sol = Solutions()
-            sol.Scrapping()*/
+            let sol = Solutions()
+            sol.Scrapping()
                 
             }) {
                 Text("GO !")

@@ -11,8 +11,8 @@ import AVFoundation
 
 final class UserData: ObservableObject {
     @Published var probas = probaData
-    @Published var countdownMinutes = 0
-    @Published var countdownSeconds = 2
+    @Published var countdownMinutes = 2
+    @Published var countdownSeconds = 30
     @Published var countdownTime = 10
     @Published var gamePlaying = false
     @Published var pause = false

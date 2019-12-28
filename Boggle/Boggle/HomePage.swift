@@ -94,25 +94,22 @@ struct HomePage: View {
                     }
                     Spacer()
                     ZStack{
-                        HStack{
                             DiceGrid(grid: self.$grid)
-                            /*
-                            if self.grid.showSolutions{
-                                
-                            }*/
-                        }
+           
                         if self.userData.pause{
                             BoggleCover(gridSize: self.grid.maxPossibleSize)
                             if self.userData.reset == false{
                                 pauseString
                             }
                         }
-                        //if self.userData.gameEnd == true && self.grid.showSolutions == false{
+                        //
      
-                        NavigationLink(destination: SolutionsView(isNavigationBarHidden: self.$isNavigationBarHidden, grid: self.$grid), isActive: self.$grid.showSolutions){ EmptyView() }
+                            NavigationLink(destination: SolutionsView(isNavigationBarHidden: self.$isNavigationBarHidden, grid: self.$grid), isActive: self.$grid.showSolutions){ EmptyView() }
+                            
+                        if self.userData.gameEnd == true && self.grid.showSolutions == false{
                         
-                        SolutionsButton(grid: self.$grid)
-                       // }
+                            SolutionsButton(grid: self.$grid)
+                        }
                     }
                     
                     Spacer()
